@@ -146,6 +146,25 @@ func badgerSpec() map[string]interface{} {
 	}
 }
 
+func leveldbSpec() map[string]interface{} {
+	return map[string]interface{}{
+		"type": "mount",
+		"mounts": []interface{}{
+			map[string]interface{}{
+				"mountpoint": "/",
+				"type":       "measure",
+				"prefix":     "leveldb.datastore",
+				"child": map[string]interface{}{
+					"type":        "levelds",
+					"path":        "datastore",
+					"compression": "none",
+				},
+			},
+		},
+		"crust": "http://127.0.0.1:12222/api/v0",
+	}
+}
+
 func flatfsSpec() map[string]interface{} {
 	return map[string]interface{}{
 		"type": "mount",
