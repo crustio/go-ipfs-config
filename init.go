@@ -172,6 +172,7 @@ func flatfsSpec() map[string]interface{} {
 				},
 			},
 		},
+		"crust": "http://127.0.0.1:12222/api/v0",
 	}
 }
 
